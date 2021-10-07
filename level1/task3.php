@@ -42,12 +42,12 @@ function processHttpRequest($method, $uri, $headers, $body) {
     $statuscode ='';
     $bodysuma ="";
 
-    if (strpos($uri, '/sum') != 0 ){
+    if (!(strpos($uri, "/sum") === 0) ){
         $statuscode = "404";
         $statusmessage = "Not Found";
         $body = 'not found';
     }
-    if (($daposition = strpos($uri, "?nums=")) && $statuscode =="" ){
+    if (($daposition = strpos($uri, "?nums=")) && ($statuscode =="") ){
 
         $bodysuma = explode(",",substr($uri, $daposition + strlen('?nums=' )));
 
@@ -57,12 +57,13 @@ function processHttpRequest($method, $uri, $headers, $body) {
         }
         $body = $summ;
         $headers['Content-Length'] = strlen((string)$body);
-    } else{
+    } elseif($statuscode == ''){
         $statuscode = "400";
         $statusmessage = "Bad Request";
+        $body = 'not found';
     }
 
-    if ($method == "GET" && $statuscode ==''){
+    if (($method == "GET") && ($statuscode =='')){
         $statuscode ='200'; $statusmessage ='OK';
 
     }
@@ -80,8 +81,8 @@ function parseTcpStringAsHttpRequest($string) {
             "Accept-Language"=>"en-us",
             "Accept-Encoding"=>"gzip, deflate",
             "User-Agent"=>"Mozilla/4.0",
-            "Content-Length"=>"2"),
-        //"body" => "ffff",
+            "Content-Length"=>"35"),
+        "body" => "",
     );
 }
 
