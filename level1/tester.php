@@ -116,7 +116,7 @@ T3
 	4 => <<<T4
 HTTP/1.1 200 OK
 Server: Apache/2.2.14 (Win32)
-Content-Length: 34
+Content-Length: 35
 Connection: Closed
 Content-Type: text/html; charset=utf-8
 
