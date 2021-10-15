@@ -39,8 +39,8 @@ Vue.component("task", {
 	`
 });
 
-const url = "http://test.local/serv-api-v2/";
-const site = "http://test.local/LoginToDo/login.html";
+const url = "http://site2.example.com/serv-api-v2/";
+const site = "http://site1.example.com/LoginToDo/login.html";
 let vue = new Vue({
 	el: '#app',
 	data: {
