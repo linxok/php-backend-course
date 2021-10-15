@@ -1,15 +1,18 @@
-**Level2 - uses Docker for up Apache2 + MySQL(5.7) + PHP7.4 + PhpMyAdmin(127.0.0.1:8080) host need (test.local)**
+**Level2 - uses Docker**
+ - current realise -
+   - https://www.bogotobogo.com/DevOps/Docker/Docker-Compose-Nginx-Reverse-Proxy-Multiple-Containers.php
 
-install Docker and Composer - https://www.magemodule.com/all-things-magento/magento-2-tutorials/docker-magento-2-development/
+ - alter 
+   - install Docker and Composer - https://www.magemodule.com/all-things-magento/magento-2-tutorials/docker-magento-2-development/
+   - https://bestprogrammer.ru/programmirovanie-i-razrabotka/nastrojka-sredy-razrabotki-php-s-pomoshhyu-docker
 
-**run Docker command (uses in directory the docker-compose.yml):**
-- Spin Up 
-  - _docker-compose up -d --build_
-- Tear Down 
-  - _docker-compose down_
-- Connect to web container CLI 
-  - _docker exec -it web bash_
-    - root directory "cd app"
-- Connect to database container CLI 
-  - _docker exec -it mysql bash_
- 
+
+add to /etc/hosts (127.0.0.1 or you host IP) 
+
+- 127.0.0.1 site1.example.com
+- 127.0.0.1 site2.example.com
+- run start.sh or stop.sh 
+
+site1 - frontend
+
+site2 - backend
