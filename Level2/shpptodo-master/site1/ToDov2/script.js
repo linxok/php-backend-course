@@ -39,7 +39,7 @@ Vue.component("task", {
 	`
 });
 
-const url = "http://site2.example.com/serv-api-v2/";
+const url = "http://site2.example.com/v1/";
 const site = "http://site1.example.com/LoginToDo/login.html";
 let vue = new Vue({
 	el: '#app',
