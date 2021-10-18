@@ -16,3 +16,33 @@ services:
       - .:/app:cached
     expose:
       - "80"
+    links:
+      - mysql
+  mysql:
+      image: mysql:5.7
+      container_name: mysql
+      restart: always
+      ports:
+        - "3306:3306"
+      environment:
+        - MYSQL_ROOT_PASSWORD=root
+        - MYSQL_DATABASE=shpp
+      volumes:
+        - ./db_data:/var/lib/mysql
+  phpmyadmin:
+      container_name: phpmyadmin
+      restart: always
+      image: phpmyadmin/phpmyadmin:latest
+      environment:
+        - MYSQL_ROOT_PASSWORD=root
+        - PMA_USER=root
+        - PMA_PASSWORD=root
+      ports:
+        - "8080:80"
+      links:
+        - mysql:db
+      depends_on:
+        - mysql
+volumes:
+  db-data:
+    external: false
