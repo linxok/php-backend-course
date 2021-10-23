@@ -17,3 +17,4 @@ if (strlen($request['text']) >0) {
     echo json_encode(array("id" => $get_last_id));
 
 }
+$mysqli->close();
