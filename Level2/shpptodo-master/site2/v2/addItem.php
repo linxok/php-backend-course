@@ -14,10 +14,6 @@ if (strlen($request['text']) >0) {
 
     $get_last_id = $mysqli->insert_id;
 
-    $db_request = "INSERT INTO todolist (id) VALUES ('$get_last_id')";
-
-    $mysqli->query($db_request);
-
     echo json_encode(array("id" => $get_last_id));
 
 }
