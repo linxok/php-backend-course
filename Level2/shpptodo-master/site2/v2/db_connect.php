@@ -4,7 +4,7 @@ const USER = 'root';
 const PASSWORD = 'root';
 const TABLE = 'shpp';
 try {
-    $db_connect = mysqli_connect(HOST, USER, PASSWORD, TABLE);
-} catch (mysqli_sql_exception $e) {
-    die('Connect ERROR ' . $e);
+    $mysqli = new mysqli(HOST, USER, PASSWORD, TABLE);
+} catch (mysqli_sql_exception $exception) {
+    die('Connect ERROR ' . $exception);
 }
