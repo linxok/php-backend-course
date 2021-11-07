@@ -3,12 +3,12 @@ require_once 'header.php';
 require_once 'db_connect.php';
 
 
-$sql_request = 'SELECT * FROM todolist';
+$sql_request = "SELECT * FROM $tableName";
 
 $todolist_db = $mysqli->query($sql_request);
 
 $todolist_arr = [
-    ['items' => []]
+    ["items" => []]
 ];
 
 while ($task = ($todolist_db->fetch_array(MYSQLI_ASSOC))) {

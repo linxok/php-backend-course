@@ -10,7 +10,7 @@ if (strlen($request['text'] ) > 0) {
     $text = $request['text'];
     $checked = $request['checked'] ? 1 : 0;
 
-    $db_request = "UPDATE todolist SET text = '$text', checked = '$checked' WHERE id = '$id'";
+    $db_request = "UPDATE $tableName SET text = '$text', checked = '$checked' WHERE id = '$id'";
 
     if (!$mysqli->query($db_request)){
 

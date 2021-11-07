@@ -8,7 +8,7 @@ if (strlen($request['text']) >0) {
 
     $text = $request['text'];
 
-    $db_request = "INSERT INTO todolist (text, checked) VALUES ('$text',0)";
+    $db_request = "INSERT INTO $tableName (text, checked) VALUES ('$text',0)";
 
     $mysqli->query($db_request);
 

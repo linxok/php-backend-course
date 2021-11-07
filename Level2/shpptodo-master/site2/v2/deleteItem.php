@@ -8,7 +8,7 @@ if (strlen($request['id'] ) > 0) {
 
     $id = $request['id'];
 
-    $db_request = "DELETE FROM todolist WHERE id = '$id'";
+    $db_request = "DELETE FROM $tableName WHERE id = '$id'";
 
     if (!$mysqli->query($db_request)){
 
